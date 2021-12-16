@@ -109,4 +109,35 @@
     //
     //}
     
-    
+            int main()
+        {
+            int i;
+            double x = 0, arr[10];
+            cout << "Enter a number between 1-10 :" << endl;
+
+            for (i = 0; i < 10; ++i)
+            {
+                cout << "Enter Number " << i + 1 << " : ";
+                cin >> arr[i];
+
+                while (cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Invalid Input, Please try again: " << endl;
+                    cin >> arr[i];
+                }
+            }
+
+            x = arr[0];
+            for (i = 0; i < 10; i++)
+            {
+                if (x > arr[i])
+                    x = arr[i];
+            }
+            cout << "Smallest value is = " << x << endl;
+
+            return 0;
+        }
+
+
